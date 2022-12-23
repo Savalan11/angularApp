@@ -1,9 +1,14 @@
 <h2>Programming books list!</h2>
+<button>show books</button>
 
-<ul>
+
+<ul ngIf="isShowing">
     <li>
-        <img src="https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg" alt="" width="100"> 
+        <img src="{{ src }}" alt="{{ name }}" width="100"/> 
         {{ name }} by  {{ author }}
+    <li>
+        <img src="{{ src2 }}" alt="{{ name2 }}" width="100"/> 
+        {{ name2 }} by  {{ author2 }}
     </li>
 </ul>
 
