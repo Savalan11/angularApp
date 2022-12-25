@@ -1,15 +1,19 @@
 <h2>Programming books list!</h2>
-<button>show books</button>
+<!-- <button (click)="isShowing = !isShowing">
+    <ng-container *ngIf="!isShowing">show books</ng-container>
+    <ng-container *ngIf="isShowing">hide books</ng-container>
+</button> -->
 
 
-<ul ngIf="isShowing">
-    <li>
-        <img src="{{ src }}" alt="{{ name }}" width="100"/> 
-        {{ name }} by  {{ author }}
-    <li>
-        <img src="{{ src2 }}" alt="{{ name2 }}" width="100"/> 
-        {{ name2 }} by  {{ author2 }}
-    </li>
+<ul *ngIf="isShowing">
+    <ng-container *ngFor="let book of books; let i=index">
+    <li class="book">
+        <!-- <p class="sno">{{ i + 1 }}</p> -->
+        <img [src]="book.image" [alt]="book.name" width="100"/> 
+        <p class="title">{{ book.name | titlecase }} by  {{ book.author | titlecase }}</p>
+        <p class="currency">{{ book.amount | currency }}</p>
+        <button>Add to Card</button>
+    </ng-container>
 </ul>
 
 

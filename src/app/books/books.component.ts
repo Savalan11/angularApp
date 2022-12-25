@@ -1,25 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Book {
+  name: string;
+  author: string;
+  image: string;
+  amount: number;
+}
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
+books: Book[] = [
+  {
+    name: "Pro Angular",
+    author: "Adam Freeman",
+    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41r7+TqeYsL._SY344_BO1,204,203,200_.jpg",
+    amount: 15,
+  },
+  {
+    name: "Advanced Guides to Master C#",
+    author: "Mark Reed",
+    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg",
+    amount: 25,
 
-name: string = "Pro Angular";
-author: string = "Adam Freeman";
-src: string = "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41r7+TqeYsL._SY344_BO1,204,203,200_.jpg";
+  },
+  {
+    name: "Advanced Guides to Master C#",
+    author: "Mark Reed",
+    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg",
+    amount: 25,
 
-name2: string = "Advanced Guides to Master C#";
-author2: string = "Mark Reed";
-src2: string = "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg";
+  },
+  {
+    name: "Advanced Guides to Master C#",
+    author: "Mark Reed",
+    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg",
+    amount: 25,
 
+  },
+
+];
+
+isShowing: boolean = true;
 
   constructor () { }
 
   ngOnInit(): void {
-
+   
 }
 
 }
