@@ -7,6 +7,11 @@ import { Book } from '../types/Book';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
+
+  addToCard(){
+    console.log('asdf');
+  }
+  
 books: Book[] = [
   {
     name: "Pro Angular",
@@ -37,6 +42,8 @@ books: Book[] = [
   },
 
 ];
+
+card: Book[] = [];
 
 isShowing: boolean = true;
 
