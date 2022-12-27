@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../types/Book';
+import { BooksService } from './books.service';
 
 @Component({
   selector: 'app-books',
@@ -8,49 +9,16 @@ import { Book } from '../types/Book';
 })
 export class BooksComponent implements OnInit {
 
-  addToCard(){
-    console.log('asdf');
-  }
   
-books: Book[] = [
-  {
-    name: "Pro Angular",
-    author: "Adam Freeman",
-    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41r7+TqeYsL._SY344_BO1,204,203,200_.jpg",
-    amount: 15,
-  },
-  {
-    name: "Advanced Guides to Master C#",
-    author: "Mark Reed",
-    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg",
-    amount: 25,
+books: Book[] = [];
+//by identifying dependency injection angular automatically issues for us the list of books envisaged in books.service.ts
 
-  },
-  {
-    name: "Advanced Guides to Master C#",
-    author: "Mark Reed",
-    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg",
-    amount: 25,
-
-  },
-  {
-    name: "Advanced Guides to Master C#",
-    author: "Mark Reed",
-    image: "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/41tKWuKfTsL._SX348_BO1,204,203,200_.jpg",
-    amount: 25,
-
-  },
-
-];
-
-card: Book[] = [];
+constructor (private booksService: BooksService) {}
 
 isShowing: boolean = true;
 
-  constructor () { }
-
   ngOnInit(): void {
-   
+    this.books =this.booksService.getBooks()
 }
 
 }
