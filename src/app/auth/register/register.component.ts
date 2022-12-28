@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterForm } from 'src/app/types/Auth';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -13,15 +15,23 @@ export class RegisterComponent implements OnInit {
     password: '',
     confirm_password: '',
   };
-  authService: any;
+
+ 
+
+  // isLoading: boolean = false;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    
   }
 
   submit() {
-    console.log(this.form);
-    // this.authService.register(this.form);
+    this.authService.register(this.form);
+  }
+
+  isLoading() {
+    return this.authService.isLoading;
   }
   
 }
