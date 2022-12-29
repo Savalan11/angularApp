@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
 
  
 
-  // isLoading: boolean = false;
+  passwordMatched: boolean = true;
 
   constructor(private authService: AuthService) { }
 
